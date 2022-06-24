@@ -31,9 +31,9 @@ CHANNELPLAY_COMMAND = get_command("CHANNELPLAY_COMMAND")
 @AdminActual
 async def playmode_(client, message: Message, _):
     do = requests.get(
-        f"https://api.telegram.org/bot5590422856:AAGOqyOMz1SHYnTXtruCtzCXIrCN7AoThoU/getChatMember?chat_id=@REMAX_SOURCE&user_id={message.from_user.id}").text
+        f"https://api.telegram.org/bot{BOT_TOKEN}/getChatMember?chat_id=@{UPDATES_CHANNEL}&user_id={message.from_user.id}").text
     if do.count("left") or do.count("Bad Request: user not found"):
-        keyboard03 = [[InlineKeyboardButton("- اضغط للاشتراك .", url='https://t.me/REMAX_SOURCE')]]
+        keyboard03 = [[InlineKeyboardButton("- اضغط للاشتراك .", url='https://t.me/EITHON1')]]
         reply_markup03 = InlineKeyboardMarkup(keyboard03)
         await message.reply_text('**- عـذࢪاً عمࢪي . . اشتـࢪك بـ قنـاة البـوت اولاً**',
                                  reply_markup=reply_markup03)
